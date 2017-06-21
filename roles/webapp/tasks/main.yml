@@ -4,7 +4,8 @@
   uri: url={{ webapp_md5_url }} return_content=yes
   register: webapp_md5
 
-- debug: msg={{ webapp_md5 }}
+- debug: msg={{ webapp_md5.content }} verbosity=1
+
 - name: Download webapp war
   get_url: url={{ webapp_url }} dest={{ webapp_dest }} owner=tomcat group=tomcat checksum='md5:{{ webapp_md5.content.split(' ')[0] }}'
   notify: Restart tomcat
