@@ -1,6 +1,5 @@
 ---
 # webapp vars
-webapp_name: 'hello-world'
-webapp_url: "https://github.com/aliusmiles/training-ansible/blob/master/files/{{ webapp_name }}.war"
-webapp_md5_url: "https://github.com/aliusmiles/training-ansible/blob/master/files/{{ webapp_name }}.war.md5"
+webapp_url: "https://raw.githubusercontent.com/aliusmiles/training-ansible/master/files/{{ webapp_name }}.war"
+webapp_md5_url: "https://raw.githubusercontent.com/aliusmiles/training-ansible/master/files/{{ webapp_name }}.war.md5"
 webapp_dest: "/usr/share/tomcat/webapps/{{ webapp_name }}.war"
