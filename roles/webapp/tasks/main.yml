@@ -8,9 +8,6 @@
 
 - name: Download {{ webapp_name }} war file
   get_url: url={{ webapp_url }} dest={{ webapp_dest }} owner=tomcat group=tomcat checksum='md5:{{ webapp_md5.content.split(' ')[0] }}'
-  notify: Restart tomcat
-
-- meta: flush_handlers
 
 - name: Check if {{ webapp_name }} is up
   uri: url="http://{{ ansible_host }}:8080/{{ webapp_name }}"

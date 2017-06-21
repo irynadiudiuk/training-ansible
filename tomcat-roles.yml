@@ -7,4 +7,6 @@
   roles:
     - common
     - tomcat
-    - webapp
+    - { role: webapp }
+    - role: webapp
+      webapp_name: sample
