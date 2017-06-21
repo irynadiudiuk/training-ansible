@@ -1,0 +1,4 @@
+---
+# common tasks
+- name: Add epel repo
+  yum: name=epel-release state=installed

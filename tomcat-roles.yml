@@ -1,0 +1,10 @@
+---
+- name: Install tomcat with roles playbook
+  hosts: all
+  vars:
+    tomcat_admin_password: 'testpassword'
+
+  roles:
+    - common
+    - tomcat
+    - webapp
