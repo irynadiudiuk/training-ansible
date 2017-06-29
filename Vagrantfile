@@ -17,7 +17,7 @@ Vagrant.configure('2') do |config|
     SHELL
   end
 
-  # test server VM
+  # tomcat VM
   config.vm.define 'tomcat' do |tomcat|
     tomcat.vm.hostname = 'tomcat.local'
     tomcat.vm.network :private_network, ip: '192.168.13.113'

@@ -15,6 +15,10 @@
         - tomcat
         - tomcat-admin-webapps
 
+    - name: Copy tomcat server config file
+      template: src=files/server.xml.j2 dest=/etc/tomcat/server.xml
+      notify: Restart tomcat
+
     - name: Copy tomcat users config file
       template: src=files/tomcat-users.xml.j2 dest=/etc/tomcat/tomcat-users.xml
       notify: Restart tomcat

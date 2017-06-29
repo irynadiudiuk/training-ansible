@@ -4,6 +4,10 @@
   yum: name={{ item }} state=installed
   with_items: "{{ tomcat_packages }}"
 
+- name: Copy tomcat server config file
+  template: src=server.xml.j2 dest=/etc/tomcat/server.xml
+  notify: Restart tomcat
+
 - name: Copy tomcat users config file
   template: src=tomcat-users.xml.j2 dest=/etc/tomcat/tomcat-users.xml
   notify: Restart tomcat
