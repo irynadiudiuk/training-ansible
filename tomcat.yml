@@ -24,7 +24,7 @@
       notify: Restart tomcat
 
     - name: Upload war
-      copy: src=files/hello-world.war dest=/usr/share/tomcat/webapps/hello-world.war owner=tomcat group=tomcat
+      copy: src=files/hello-world.war dest=/var/lib/tomcat/webapps/hello-world.war owner=tomcat group=tomcat
       notify: Restart tomcat
 
     - meta: flush_handlers
